@@ -6,7 +6,7 @@ export const getVideoPath = (number: number, extension: 'mp4' | 'mov' = 'mp4'): 
 
 // Video format requirements
 export const VIDEO_REQUIREMENTS = {
-  formats: ['MP4', 'MOV'], // Accept both MP4 and MOV
+  formats: ['mp4', 'mov'], // Accept both mp4 and mov in lowercase
   naming: 'video{number}.{extension}', // Example: video1.mp4, video2.mov, etc.
   location: '/public/videos/',
   maxNumber: 90,
@@ -18,5 +18,5 @@ export const VIDEO_REQUIREMENTS = {
  * @returns {boolean} Whether the format is valid.
  */
 export const isValidVideoFormat = (format: string): boolean => {
-  return VIDEO_REQUIREMENTS.formats.includes(format.toUpperCase());
+  return VIDEO_REQUIREMENTS.formats.includes(format.toLowerCase());
 };
